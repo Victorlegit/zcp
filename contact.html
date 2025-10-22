@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Zambian Cloud Programmers</title>
+    <title>Contact Us - Zambian Cloud Programmers</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -131,22 +131,28 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .service-card {
+        .contact-card {
             transition: all 0.3s ease;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .team-card {
-            transition: all 0.3s ease;
-        }
-        
-        .team-card:hover {
+        .contact-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -169,7 +175,7 @@
                     <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                         <i class="fas fa-info-circle mr-2"></i> About
                     </a>
-                    <a href="services.html" class="text-blue-600 font-medium transition flex items-center">
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                         <i class="fas fa-cogs mr-2"></i> Services
                     </a>
                     <a href="team.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
@@ -178,7 +184,7 @@
                     <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                         <i class="fas fa-comments mr-2"></i> Testimonials
                     </a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                    <a href="contact.html" class="text-blue-600 font-medium transition flex items-center">
                         <i class="fas fa-envelope mr-2"></i> Contact
                     </a>
                 </div>
@@ -199,7 +205,7 @@
             <a href="about.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                 <i class="fas fa-info-circle mr-2"></i> About
             </a>
-            <a href="services.html" class="block text-blue-600 font-medium transition flex items-center">
+            <a href="services.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                 <i class="fas fa-cogs mr-2"></i> Services
             </a>
             <a href="team.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
@@ -208,7 +214,7 @@
             <a href="testimonials.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
                 <i class="fas fa-comments mr-2"></i> Testimonials
             </a>
-            <a href="contact.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+            <a href="contact.html" class="block text-blue-600 font-medium transition flex items-center">
                 <i class="fas fa-envelope mr-2"></i> Contact
             </a>
         </div>
@@ -223,244 +229,194 @@
                 </a>
                 <span><i class="fas fa-chevron-right"></i></span>
                 <span class="flex items-center">
-                    <i class="fas fa-cogs mr-1"></i> Services
+                    <i class="fas fa-envelope mr-1"></i> Contact
                 </span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Our Services</h1>
-            <p class="text-xl max-w-3xl fade-in">Discover our comprehensive range of services tailored to meet the unique needs of businesses in Zambia</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Get In Touch</h1>
+            <p class="text-xl max-w-3xl fade-in">Ready to transform your business? Let's discuss your project and find the perfect solution</p>
             <div class="mt-8 flex justify-center">
                 <div class="w-16 h-1 bg-yellow-400 mx-auto mb-6 pulse"></div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Contact Information Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Information</h2>
                 <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Discover our distinct advantages and how we differentiate ourselves in the digital landscape</p>
+                <p class="text-gray-600 max-w-3xl mx-auto">Get in touch with us through any of the following channels</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Address Card -->
+                <div class="bg-blue-50 p-8 rounded-xl shadow-lg contact-card zoom-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto float">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Our Location</h3>
+                    <p class="text-gray-600 text-center mb-2">1517 Findeco House</p>
+                    <p class="text-gray-600 text-center">Lusaka, Zambia</p>
+                    <div class="mt-6 text-center">
+                        <a href="https://maps.google.com/?q=1517+Findeco+House,Lusaka,Zambia" target="_blank" class="text-blue-600 font-medium inline-flex items-center">
+                            <i class="fas fa-directions mr-2"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Phone Card -->
+                <div class="bg-blue-50 p-8 rounded-xl shadow-lg contact-card zoom-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto float">
+                        <i class="fas fa-phone-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Phone Numbers</h3>
+                    <p class="text-gray-600 text-center mb-2">+260 964 373 241</p>
+                    <p class="text-gray-600 text-center">+260 976 349 897</p>
+                    <div class="mt-6 text-center">
+                        <a href="tel:+260964373241" class="text-blue-600 font-medium inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Email Card -->
+                <div class="bg-blue-50 p-8 rounded-xl shadow-lg contact-card zoom-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto float">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Email Address</h3>
+                    <p class="text-gray-600 text-center">info@zamclouds.com</p>
+                    <div class="mt-6 text-center">
+                        <a href="mailto:info@zamclouds.com" class="text-blue-600 font-medium inline-flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
                 <div class="slide-in-left">
-                    <div class="bg-blue-50 p-8 rounded-lg shadow-lg service-card">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 float">
-                                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as possible</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name</label>
+                                <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Your first name">
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Expertise in Local Market</h3>
-                                <p class="text-blue-600 font-medium">Deep understanding of Zambian business landscape</p>
+                                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name</label>
+                                <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Your last name">
                             </div>
                         </div>
-                        <p class="text-gray-600">Our deep understanding of the Zambian market enables us to deliver tailored solutions that address specific local challenges and opportunities.</p>
-                    </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="+260 XXX XXX XXX">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                                <option value="">Select a service</option>
+                                <option value="custom-software">Custom Software Development</option>
+                                <option value="cloud-solutions">Cloud Solutions</option>
+                                <option value="website-development">Website Development</option>
+                                <option value="ecommerce">E-commerce Solutions</option>
+                                <option value="mobile-apps">Mobile App Development</option>
+                                <option value="it-consulting">IT Consulting</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="data-analytics">Data Analytics</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
                 </div>
                 
+                <!-- Map & Additional Info -->
                 <div class="slide-in-right">
-                    <div class="bg-blue-50 p-8 rounded-lg shadow-lg service-card">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 float">
-                                <i class="fas fa-award text-white text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-800">Commitment to Quality</h3>
-                                <p class="text-blue-600 font-medium">International standards, local implementation</p>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Find Us</h2>
+                    
+                    <!-- Map Container -->
+                    <div class="map-container mb-8">
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 h-64 flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold">Findeco House, Lusaka</h3>
+                                <p class="mt-2">1517 Findeco House, Lusaka, Zambia</p>
+                                <a href="https://maps.google.com/?q=1517+Findeco+House,Lusaka,Zambia" target="_blank" class="inline-block mt-4 bg-white text-blue-600 font-medium py-2 px-4 rounded-lg">
+                                    <i class="fas fa-external-link-alt mr-2"></i> Open in Google Maps
+                                </a>
                             </div>
                         </div>
-                        <p class="text-gray-600">We pride ourselves on delivering high-quality services that meet international standards while being perfectly adapted to the Zambian context.</p>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-clock text-blue-600 mr-2"></i> Business Hours
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Monday - Friday</span>
+                                <span class="font-medium">8:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Saturday</span>
+                                <span class="font-medium">9:00 AM - 1:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Sunday</span>
+                                <span class="font-medium">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency Support -->
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 rounded-xl text-white">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-life-ring mr-2"></i> Emergency Support
+                        </h3>
+                        <p class="mb-4">For urgent technical issues outside business hours, our emergency support team is available.</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span class="font-medium">+260 964 373 241</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Services Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Discover our comprehensive range of services tailored to meet the unique needs of businesses in Zambia</p>
-                <div class="mt-8">
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center">
-                        <i class="fas fa-rocket mr-2"></i> Explore Our Services
-                    </a>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Custom Software Development -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-laptop-code text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Custom Software Development</h3>
-                    <p class="text-gray-600 mb-6">We develop tailor-made software applications that streamline operations and enhance productivity for businesses of all sizes.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-                
-                <!-- Cloud Solutions -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-cloud text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Cloud Solutions</h3>
-                    <p class="text-gray-600 mb-6">Utilizing cloud technology, we provide solutions that ensure scalability and efficiency for your business operations.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-                
-                <!-- Website Development -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-globe text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Website Development</h3>
-                    <p class="text-gray-600 mb-6">Our team specializes in creating fast, responsive websites optimized for user engagement and search engine performance.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-                
-                <!-- E-commerce Solutions -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">E-commerce Solutions</h3>
-                    <p class="text-gray-600 mb-6">We offer robust e-commerce platforms to help businesses establish a strong online presence and increase sales.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-                
-                <!-- Mobile App Development -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mobile App Development</h3>
-                    <p class="text-gray-600 mb-6">We build mobile applications that offer seamless user experiences, designed to engage customers on the go.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-                
-                <!-- IT Consulting -->
-                <div class="bg-white p-8 rounded-lg shadow-lg service-card fade-in">
-                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 float">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">IT Consulting</h3>
-                    <p class="text-gray-600 mb-6">Strategic IT guidance to help your business leverage technology for growth, efficiency, and competitive advantage.</p>
-                    <div class="flex items-center text-blue-600 font-medium">
-                        <span>Learn More</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
+    <!-- FAQ Section -->
     <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Talented Team</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Our dedicated professionals are committed to delivering exceptional results for your business</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- John Doe -->
-                <div class="bg-white p-6 rounded-lg shadow-lg team-card text-center fade-in">
-                    <div class="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="team/john-doe.jpg" alt="John Doe" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">John Doe</h3>
-                    <p class="text-blue-600 font-medium mb-4">Lead Software Developer</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Mike Johnson -->
-                <div class="bg-white p-6 rounded-lg shadow-lg team-card text-center fade-in">
-                    <div class="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="team/mike-johnson.jpg" alt="Mike Johnson" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">Mike Johnson</h3>
-                    <p class="text-blue-600 font-medium mb-4">UI/UX Designer</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Jane Smith -->
-                <div class="bg-white p-6 rounded-lg shadow-lg team-card text-center fade-in">
-                    <div class="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="team/jane-smith.jpg" alt="Jane Smith" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">Jane Smith</h3>
-                    <p class="text-blue-600 font-medium mb-4">Project Manager</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Emily Davis -->
-                <div class="bg-white p-6 rounded-lg shadow-lg team-card text-center fade-in">
-                    <div class="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="team/emily-davis.jpg" alt="Emily Davis" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">Emily Davis</h3>
-                    <p class="text-blue-600 font-medium mb-4">Digital Marketing Specialist</p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQs Section -->
-    <section class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
                 <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Frequently Asked Questions to guide you through our offerings and processes</p>
+                <p class="text-gray-600 max-w-3xl mx-auto">Quick answers to common questions about our services and processes</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -468,47 +424,63 @@
                     <!-- FAQ Item 1 -->
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none">
-                            <span class="text-lg font-medium text-gray-800">What services do you offer?</span>
+                            <span class="text-lg font-medium text-gray-800">How quickly do you respond to inquiries?</span>
                             <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
                         </button>
                         <div class="px-6 pb-6 hidden">
-                            <p class="text-gray-600">We offer a comprehensive range of services including custom software development, cloud solutions, website development, e-commerce platforms, mobile app development, IT consulting, digital marketing, and data analytics.</p>
+                            <p class="text-gray-600">We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 2 -->
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none">
-                            <span class="text-lg font-medium text-gray-800">How long does a project typically take?</span>
+                            <span class="text-lg font-medium text-gray-800">Do you offer free consultations?</span>
                             <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
                         </button>
                         <div class="px-6 pb-6 hidden">
-                            <p class="text-gray-600">Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while a comprehensive custom software solution could take 3-6 months. We provide detailed project timelines during our initial consultation.</p>
+                            <p class="text-gray-600">Yes, we offer free initial consultations to understand your needs and provide recommendations for your project.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 3 -->
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none">
-                            <span class="text-lg font-medium text-gray-800">Can you assist with ongoing support?</span>
+                            <span class="text-lg font-medium text-gray-800">What industries do you serve?</span>
                             <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
                         </button>
                         <div class="px-6 pb-6 hidden">
-                            <p class="text-gray-600">Yes, we offer comprehensive support and maintenance packages to ensure your systems continue to run smoothly. Our support includes troubleshooting, updates, security patches, and performance optimization.</p>
+                            <p class="text-gray-600">We serve a wide range of industries including education, healthcare, retail, finance, NGOs, and government institutions across Zambia.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 4 -->
                     <div class="border-b border-gray-200">
                         <button class="flex justify-between items-center w-full p-6 text-left focus:outline-none">
-                            <span class="text-lg font-medium text-gray-800">What are your payment terms?</span>
+                            <span class="text-lg font-medium text-gray-800">Do you provide ongoing support after project completion?</span>
                             <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
                         </button>
                         <div class="px-6 pb-6 hidden">
-                            <p class="text-gray-600">We typically work with a 50% upfront payment for projects, with the balance due upon completion. For larger projects, we can arrange milestone-based payments. We also offer flexible payment plans for qualifying clients.</p>
+                            <p class="text-gray-600">Yes, we offer comprehensive support and maintenance packages to ensure your systems continue to run smoothly after deployment.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Ready to Start Your Project?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8 fade-in">Contact us today for a free consultation and let's discuss how we can help transform your business</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="tel:+260964373241" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 inline-flex items-center">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+                <a href="mailto:info@zamclouds.com" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i> Send Email
+                </a>
             </div>
         </div>
     </section>
@@ -644,6 +616,13 @@
                 // Rotate icon
                 icon.classList.toggle('rotate-180');
             });
+        });
+        
+        // Form submission (basic example)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
         });
         
         // Initial check
