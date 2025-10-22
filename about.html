@@ -1,0 +1,669 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Zambian Cloud Programmers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* New animation styles */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        .slide-in-left.visible, .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            animation: bounceIn 0.8s forwards;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        
+        .icon-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .icon-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="zcp logoo.png" alt="Zambian Cloud Programmers" class="h-12 w-auto">
+                        <span class="text-xl font-bold text-blue-600">Zambian Cloud Programmers</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                    <a href="about.html" class="text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-info-circle mr-2"></i> About
+                    </a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-cogs mr-2"></i> Services
+                    </a>
+                    <a href="team.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-users mr-2"></i> Team
+                    </a>
+                    <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-comments mr-2"></i> Testimonials
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Contact
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 space-y-3 shadow-lg">
+            <a href="index.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-home mr-2"></i> Home
+            </a>
+            <a href="about.html" class="block text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-info-circle mr-2"></i> About
+            </a>
+            <a href="services.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-cogs mr-2"></i> Services
+            </a>
+            <a href="team.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-users mr-2"></i> Team
+            </a>
+            <a href="testimonials.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-comments mr-2"></i> Testimonials
+            </a>
+            <a href="contact.html" class="block text-gray-700 hover:text-blue-600 font-medium transition flex items-center">
+                <i class="fas fa-envelope mr-2"></i> Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-bg pt-32 pb-20 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-2 text-sm mb-4">
+                <a href="index.html" class="hover:text-yellow-300 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span class="flex items-center">
+                    <i class="fas fa-info-circle mr-1"></i> About
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">About Us</h1>
+            <p class="text-xl max-w-3xl fade-in">Learn more about our mission, vision, and commitment to digital transformation</p>
+            <div class="mt-8 flex justify-center">
+                <div class="w-16 h-1 bg-yellow-400 mx-auto mb-6 pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-10 md:mb-0 slide-in-left">
+                    <div class="relative">
+                        <img src="team-photo.jpg" alt="Zambian Cloud Programmers Team" class="rounded-lg shadow-lg w-full glow">
+                        <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 slide-in-right">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Who We Are</h2>
+                    <p class="text-gray-600 mb-6 flex items-center">
+                        <i class="fas fa-arrow-right text-blue-600 mr-2"></i>
+                        We Help You <span class="text-blue-600 font-semibold">Digitize</span> → <span class="text-blue-600 font-semibold">Automate</span> → <span class="text-blue-600 font-semibold">Scale</span>
+                    </p>
+                    <p class="text-gray-600 mb-6 flex items-start">
+                        <i class="fas fa-rocket text-blue-600 mt-1 mr-2"></i>
+                        At Zambian Cloud Programmers (ZCP), we are not just software vendors — we are transformation partners. We exist to empower businesses, institutions, and organizations across Zambia and Africa to embrace digital transformation with confidence, innovation, and impact.
+                    </p>
+                    <p class="text-gray-600 flex items-start">
+                        <i class="fas fa-eye text-blue-600 mt-1 mr-2"></i>
+                        Founded with a vision to bridge the gap between technology and business growth, ZCP provides custom-built digital solutions that simplify complex operations, enhance efficiency, and unlock new opportunities for scale. We believe that every organization deserves world-class technology, built locally, tailored to its needs, and aligned with its vision.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Mission -->
+                <div class="zoom-in">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 icon-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4 float">
+                                <i class="fas fa-bullseye text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Mission</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">To empower African businesses and institutions with reliable, intelligent, and scalable software solutions that transform operations, inspire innovation, and drive measurable growth.</p>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="mission-image.jpg" alt="Our Mission" class="rounded-lg w-full transform transition-transform duration-500 hover:scale-105">
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-bullseye text-white text-4xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision -->
+                <div class="zoom-in">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 icon-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mr-4 float">
+                                <i class="fas fa-eye text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Vision</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">To be Zambia's leading digital transformation partner — building systems that redefine how Africa works, learns, and grows through technology.</p>
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="vision-image.jpg" alt="Our Vision" class="rounded-lg w-full transform transition-transform duration-500 hover:scale-105">
+                            <div class="absolute inset-0 bg-yellow-500 bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-eye text-white text-4xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What We Do</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">We design and implement smart, cloud-powered solutions that cover every aspect of modern enterprise operations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-chart-line text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">ERP & Business Management Systems</h3>
+                    <p class="text-gray-600">Comprehensive platforms that streamline finance, HR, inventory, and operations.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">School & University Management Systems</h3>
+                    <p class="text-gray-600">End-to-end academic administration tools that empower institutions to manage students, staff, and finances efficiently.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-hospital text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Hospital & Clinic Management Systems</h3>
+                    <p class="text-gray-600">Digital health solutions built to improve patient care, records management, and service delivery.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-hands-helping text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Church & NGO Systems</h3>
+                    <p class="text-gray-600">Faith and community-based management platforms that bring structure and transparency to service.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-laptop-code text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Custom Software & Web Solutions</h3>
+                    <p class="text-gray-600">Tailor-made applications and websites designed to reflect your brand and business goals.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg fade-in icon-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 float">
+                        <i class="fas fa-cloud text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Hosting, Cloud & Email Solutions</h3>
+                    <p class="text-gray-600">Secure, fast, and affordable cloud hosting with unlimited professional emails and chatbot integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy & Approach Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Philosophy -->
+                <div class="slide-in-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-brain text-blue-600 mr-3"></i> Our Philosophy
+                    </h2>
+                    <p class="text-gray-600 mb-6">We dream together, we build together. At ZCP, we believe in co-creation — turning your ideas into practical, high-impact digital realities. Our process combines deep technical expertise with an understanding of business strategy, ensuring that every system we build truly transforms how you work.</p>
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="philosophy-image.jpg" alt="Our Philosophy" class="rounded-lg w-full transform transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-lightbulb text-white text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approach -->
+                <div class="slide-in-right">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-road text-blue-600 mr-3"></i> Our Approach
+                    </h2>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start bounce-in">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 pulse">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Understand Your Vision</h4>
+                                <p class="text-gray-600">We listen to your goals and challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bounce-in">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 pulse">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Design Smart Solutions</h4>
+                                <p class="text-gray-600">We tailor every system to your exact needs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bounce-in">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 pulse">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Implement & Automate</h4>
+                                <p class="text-gray-600">We deploy solutions that simplify operations and reduce manual work.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bounce-in">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 pulse">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Support & Scale</h4>
+                                <p class="text-gray-600">We walk with you as you grow, offering continuous updates, support, and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="approach-image.jpg" alt="Our Approach" class="rounded-lg w-full transform transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-road text-white text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Locally Grounded, Globally Minded</h3>
+                    <p class="text-gray-600">Deep understanding of Zambian market with international standards.</p>
+                </div>
+                
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proven Cloud & ERP Expertise</h3>
+                    <p class="text-gray-600">Specialized in cloud technology and enterprise resource planning systems.</p>
+                </div>
+                
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Dedicated Support</h3>
+                    <p class="text-gray-600">Continuous support and customization for your unique needs.</p>
+                </div>
+                
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Affordable & Scalable</h3>
+                    <p class="text-gray-600">Cost-effective solutions that grow with your business.</p>
+                </div>
+                
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Passionate Team</h3>
+                    <p class="text-gray-600">Dedicated innovators and engineers committed to excellence.</p>
+                </div>
+                
+                <div class="text-center fade-in icon-hover">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 float">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Our Promise</h3>
+                    <p class="text-gray-600">You dream it — we build it. Together, we digitize, automate, and scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Leadership</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 pulse"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto zoom-in">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="md:flex">
+                        <div class="md:w-2/5 relative">
+                            <!-- Increased image size and added styling -->
+                            <img src="clement-kamanda.jpg" alt="Clement Kamanda" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
+                                <div class="text-white">
+                                    <h3 class="text-xl font-bold">Clement Kamanda</h3>
+                                    <p class="text-blue-200">Head of Business & Strategic Development</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white p-2 rounded-full">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/5 p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Clement Kamanda</h3>
+                            <p class="text-blue-600 font-semibold mb-4 flex items-center">
+                                <i class="fas fa-briefcase mr-2"></i> Head of Business & Strategic Development
+                            </p>
+                            <p class="text-gray-600 mb-4 flex items-start">
+                                <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                                Mr. Clement Kamanda is the visionary force behind Zambian Cloud Programmers, serving as the Head of Business and Strategic Development. A dynamic leader and tech entrepreneur, Mr. Kamanda has dedicated his career to driving digital transformation and innovation across Zambia and Africa.
+                            </p>
+                            <p class="text-gray-600 flex items-start">
+                                <i class="fas fa-chart-line text-green-500 mt-1 mr-2"></i>
+                                With a strong background in business management, software systems development, and institutional growth strategy, he has guided ZCP from a local startup into a fast-rising technology brand known for its commitment to excellence, reliability, and innovation.
+                            </p>
+                            <div class="mt-6 flex space-x-4">
+                                <div class="bg-blue-50 p-3 rounded-lg flex items-center">
+                                    <i class="fas fa-trophy text-blue-600 mr-2"></i>
+                                    <span class="text-sm font-medium">Visionary Leader</span>
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded-lg flex items-center">
+                                    <i class="fas fa-rocket text-blue-600 mr-2"></i>
+                                    <span class="text-sm font-medium">Tech Innovator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="zcp logoo.png" alt="Zambian Cloud Programmers" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Zambian Cloud Programmers</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">We are a Lusaka-based IT firm committed to driving digital transformation in Zambia.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-link mr-2"></i> Useful Links
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Home
+                        </a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> About
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Services
+                        </a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Blog
+                        </a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Contact
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-cogs mr-2"></i> Our Services
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Custom Software Development
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Cloud Solutions
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Website Development
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> E-commerce Solutions
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i> Mobile App Development
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-address-card mr-2"></i> Contact Info
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>1517 Findeco House, Lusaka, Zambia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>+260 964 373 241 / +260 976 349 897</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>info@zamclouds.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Zambian Cloud Programmers. All rights reserved. | Transforming Businesses through Innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Scroll animations
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .bounce-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        checkVisibility();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+</body>
+</html>
